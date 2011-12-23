@@ -24,3 +24,9 @@ notTheseNumbers = [x | x <- [10..20], x /= 13, x /= 15, x /= 19]
 productsOfLists xs ys = [ x*y | x <- xs, y <- ys]
 
 removeNestedOddNumbers xxs = [ [x | x <- xs, even x ] | xs <- xxs]
+
+triangles = [ (a,b,c) | a <- [1..10], b <- [1..10], c <- [1..10]]
+
+rightTriangles = [ (a, b, c) | (a,b,c) <- triangles, a^2 + b^2 == c^2]
+
+rightTriangles' = [ (a, b, c) | (a, b, c) <- rightTriangles, a + b + c == 24]
