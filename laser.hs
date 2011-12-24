@@ -1,5 +1,3 @@
-# This isn't runnable by the command line since it doesn't have a main function... :)
-
 data Target=Fool String
     | Crowd Integer
     | TheMoon
