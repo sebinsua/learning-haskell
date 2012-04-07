@@ -22,3 +22,11 @@ prime0 n | n < 1      = error "Not a positive integer."
 --       It would be sensible to change the type of divides to:
 --       divides :: Integral a -> a -> a -> Bool
 
+factors :: Integer -> [Integer]
+factors n | n < 1      = error "Argument not positive."
+          | n == 1     = []
+          | otherwise  = p : factors (div n p) where p = ld n
+
+-- Exercise 1.24
+-- If you remove an argument and it's in the type then it is implied
+-- and applied if it exists -- otherwise the function is partial.
